@@ -22,12 +22,17 @@
   --font-size-default: 1em;
   --font-size-empahasis: 2.1em;
   --font-size-mobel: 1em;
+
+    /* Transições */
+  --transtion: all 4s ease-in-out;
+  --transtion-custom: all 1s cubic-bezier(1, 0, 0, 1);
 }
 
 body{
     /* Estilo do corpo da página */
    background-color: var(--color-background);
    font-family: var(--font-default);
+   height: 100vh;
 }
 
 .nav {
@@ -73,7 +78,7 @@ img.avatar {
 .container h1 {
     text-align: center;
     font-size: var(--font-size-empahasis);
-    color: var(--color-default);
+    color: var(--color-emphasis);
 }
 
 .container .username {
@@ -81,10 +86,73 @@ img.avatar {
     font-size: var(--font-size-default);
     color: var(--color-default);
     padding: 10px;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.container a {
+.container ul {
+    list-style: none;
+    margin: 48px 0;
+    color:  var(--color-default);
+}
+
+.container .link{
+    float:  center;
     text-decoration: none;
-    width: 300px;
-    background-color: var(--color-text);
+}
+
+ul li a{
+    display:  block;
+    position: relative;
+    font-weight: bold;
+    color: var(--color-default);
+    margin: 10px 15px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    transition: var(--transtion);
+    text-decoration: none;
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    transition: var(--transtion-custom);
+    color: var(--color-default);
+}
+
+ul li a:hover::after {
+    width: 100%;
+    text-decoration: none;
+}
+
+ul li a:hover {
+ text-decoration: underline;   
+}
+
+.fa-github {
+    color: black;
+}
+.fa-linkedin-in {
+    color: var(--color-text);
+}
+
+.fa-google {
+    color: red;
+}
+
+footer {
+    display: flex;
+    border-top: 1px solid #333;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    color: var(--color-default);
+    justify-content: center;
+    padding: 10px 0;
 }
