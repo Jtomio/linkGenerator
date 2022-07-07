@@ -8,10 +8,13 @@
 
 :root {
     /* Paleta de cores */
-  --color-background: #e9f2f9;
-  --color-default: #1b325f;
-  --color-text: #3a89c9;
-  --color-emphasis: #f26c4f;
+  --bg-color: #EDF2FF;
+  --text-color: #00082F;
+  --primary-color: #4263EB;
+  --primary-color-hover: #364FC7;
+  --git-color: #00082F;
+  --in-color: #364FC7;
+  --g-color: #fc0404;
 
     /*padrão de fontes*/
   --font-default: sans-serif;
@@ -28,11 +31,31 @@
   --transtion-custom: all 1s cubic-bezier(1, 0, 0, 1);
 }
 
+body.dark-blue {
+    --primary-color-hover: #EDF2FF;
+    transition: 0.5s;
+    --bg-color: #00082F;
+    --text-color: #FFFFFF;
+    --git-color: #ffffff;
+    --in-color: #ffffff;
+  }
+  
+  body.dark-pink {
+    --bg-color: #00082F;
+    --text-color: #EDF2FF;
+    --primary-color: #D6336C;
+    --primary-color-hover: #A61E4D;
+    --git-color: #ffffff;
+    --in-color: #ffffff;
+    
+  }
+
 body{
     /* Estilo do corpo da página */
-   background-color: var(--color-background);
+   background-color: var(--bg-color);
    font-family: var(--font-default);
    height: 100vh;
+   color: var(--text-color);
 }
 
 .nav {
@@ -43,8 +66,8 @@ body{
     padding: 20px;
     width: 100%;
     height: 80px;
-    background-color: var(--color-default);
-    color: var(--color-emphasis);
+    background-color: var(--primary-color);
+    color: var(--text-color);
     font-size:var(--font-emphasis);
 }
 
@@ -72,19 +95,19 @@ img.avatar {
     width: 150px;
     height: 150px;
     padding: 2.7px;
-    border: var(--color-default) solid 2.5px;
+    border: var(--primary-color) solid 2.5px;
 }
 
 .container h1 {
     text-align: center;
     font-size: var(--font-size-empahasis);
-    color: var(--color-emphasis);
+    color: var(--text-color);
 }
 
 .container .username {
     text-align: center;
     font-size: var(--font-size-default);
-    color: var(--color-default);
+    color: var(--primary-color-hover);
     padding: 10px;
     font-weight: 700;
     text-decoration: none;
@@ -93,7 +116,7 @@ img.avatar {
 .container ul {
     list-style: none;
     margin: 48px 0;
-    color:  var(--color-default);
+    color:  var(--primary-color);
 }
 
 .container .link{
@@ -105,11 +128,10 @@ ul li a{
     display:  block;
     position: relative;
     font-weight: bold;
-    color: var(--color-default);
+    color: var(--primary-color);
     margin: 10px 15px;
     padding: 5px 0;
     text-transform: uppercase;
-    transition: var(--transtion);
     text-decoration: none;
 }
 
@@ -121,7 +143,7 @@ ul li a::after {
     bottom: 0;
     left: 0;
     transition: var(--transtion-custom);
-    color: var(--color-default);
+    color: var(--primary-color);
 }
 
 ul li a:hover::after {
@@ -131,22 +153,23 @@ ul li a:hover::after {
 
 ul li a:hover {
  text-decoration: underline;   
+ color: var(--primary-color-hover);
 }
 
 .fa-github {
-    color: black;
+    color: var(--git-color);
 }
 .fa-linkedin-in {
-    color: var(--color-text);
+    color: var(--in-color);
 }
 
 .fa-google {
-    color: red;
+    color: var(--g-color);
 }
 
 footer {
     display: flex;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--primary-color);
     bottom: 0;
     left: 0;
     height: 40px;
